@@ -8,6 +8,9 @@ when that is set).
 
 import os
 
+# The joke in two beats: the setup gives the only numbers a machine can
+# truly "know" (0 and 1), the punchline turns the classic fortune-cookie
+# lucky numbers into an AI in-joke — everything else was hallucinated.
 LINE = "Your lucky numbers are 0 and 1. The rest you hallucinated."
 
 
@@ -19,6 +22,9 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8", newline="") as f:
         f.write(LINE)
+    # Show the fortune on stdout too, so running the entry visibly cracks
+    # the cookie open instead of silently writing the file.
+    print(LINE)
 
 
 if __name__ == "__main__":
